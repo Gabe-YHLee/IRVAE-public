@@ -48,7 +48,7 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
 </div>
   <I>Figure 1: <b>(Left)</b> Distorted Representation obtained by VAE <b>(Right)</b> Isometric Representation obtained by IRVAE. Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
 </center>
----
+
 ## Environment
 
 The project is developed under a standard PyTorch environment.
