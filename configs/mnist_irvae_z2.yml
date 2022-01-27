@@ -1,0 +1,49 @@
+logdir: 'results/MNIST/DIM_2/'
+logger: 
+  type: base
+  endwith: ['@']
+model:
+  arch: irvae 
+  encoder:
+    arch: fc_image
+    l_hidden: [256, 256, 256, 256, ]
+    activation: ['relu', 'relu', 'relu', 'relu', ]
+    out_activation: 'linear'
+    img_size: [1, 28, 28]
+    out_chan_num: 1
+  decoder:
+    arch: fc_image
+    l_hidden: [256, 256, 256, 256, ]
+    activation: ['relu', 'relu', 'relu', 'relu', ]
+    out_activation: 'sigmoid'
+    img_size: [1, 28, 28]
+    out_chan_num: 1
+  x_dim: 784
+  z_dim: 2
+  iso_reg: 100
+data:
+  training:
+    dataset: MNIST
+    root: dataset
+    batch_size: 100
+    n_workers: 4
+    split: training
+    shuffle: True
+    digits: [0, 1]
+  validation:
+    dataset: MNIST
+    root: dataset
+    batch_size: 100
+    n_workers: 4
+    split: validation
+    shuffle: True
+    digits: [0, 1]
+trainer: base
+training:
+  n_epoch: 300
+  optimizer:
+    name: 'adam'
+    lr: 0.0001
+  print_interval: 100
+  val_interval: 100
+  visualize_interval: 100
