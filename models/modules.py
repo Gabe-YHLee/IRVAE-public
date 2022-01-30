@@ -121,3 +121,108 @@ class IsotropicGaussian(nn.Module):
     def sample(self, z):
         x_hat = self.net(z)
         return x_hat + torch.randn_like(x_hat) * self.sigma
+
+"""
+ConvNet for (1, 28, 28) image, following architecture in (Ghosh et al., 2019)
+"""
+
+class ConvNet28(nn.Module):
+    def __init__(
+        self, in_chan=1, out_chan=64, nh=32, out_activation="linear", activation="relu"
+    ):
+        """nh: determines the numbers of conv filters"""
+        super(ConvNet28, self).__init__()
+        self.conv1 = nn.Conv2d(in_chan, nh * 4, kernel_size=3, bias=True, stride=2)
+        self.conv2 = nn.Conv2d(nh * 4, nh * 8, kernel_size=3, bias=True, stride=2)
+        self.conv3 = nn.Conv2d(nh * 8, nh * 16, kernel_size=3, bias=True, stride=2)
+        self.conv4 = nn.Conv2d(nh * 16, nh * 32, kernel_size=2, bias=True, stride=2)
+        self.fc1 = nn.Conv2d(nh * 32, out_chan, kernel_size=1, bias=True)
+        self.in_chan, self.out_chan = in_chan, out_chan
+        self.out_activation = out_activation
+        self.activation = activation
+        if activation == "relu":
+            act = nn.ReLU
+        elif activation == "leakyrelu":
+            def act():
+                return nn.LeakyReLU(negative_slope=0.2, inplace=True)
+        else:
+            raise ValueError
+
+        layers = [
+            self.conv1,
+            act(),
+            self.conv2,
+            act(),
+            self.conv3,
+            act(),
+            self.conv4,
+            act(),
+            self.fc1,
+        ]
+
+        if self.out_activation == "tanh":
+            layers.append(nn.Tanh())
+        elif self.out_activation == "sigmoid":
+            layers.append(nn.Sigmoid())
+
+        self.net = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return self.net(x).squeeze(2).squeeze(2)
+
+
+class DeConvNet28(nn.Module):
+    def __init__(
+        self,
+        in_chan=1,
+        out_chan=1,
+        nh=32,
+        out_activation="sigmoid",
+        activation="relu",
+    ):
+        """nh: determines the numbers of conv filters"""
+        super(DeConvNet28, self).__init__()
+        self.fc1 = nn.ConvTranspose2d(in_chan, nh * 32, kernel_size=8, bias=True)
+        self.conv1 = nn.ConvTranspose2d(
+            nh * 32, nh * 16, kernel_size=3, stride=2, padding=1, bias=True
+        )
+        self.conv2 = nn.ConvTranspose2d(
+            nh * 16, nh * 8, kernel_size=2, stride=2, padding=1, bias=True
+        )
+        self.conv3 = nn.ConvTranspose2d(nh * 8, out_chan, kernel_size=1, bias=True)
+        self.in_chan, self.out_chan = in_chan, out_chan
+        self.out_activation = out_activation
+        self.activation = activation
+        if activation == "relu":
+            act = nn.ReLU
+        elif activation == "leakyrelu":
+            def act():
+                return nn.LeakyReLU(negative_slope=0.2, inplace=True)
+        else:
+            raise ValueError
+
+        layers = [
+            self.fc1,
+            act(),
+            self.conv1,
+            act(),
+            self.conv2,
+            act(),
+            self.conv3,
+        ]
+
+        if self.out_activation == "tanh":
+            layers.append(nn.Tanh())
+        elif self.out_activation == "sigmoid":
+            layers.append(nn.Sigmoid())
+
+        self.net = nn.Sequential(*layers)
+
+    def forward(self, x):
+        if len(x.size()) == 4:
+            pass
+        else:
+            x = x.unsqueeze(2).unsqueeze(2)
+        x = self.net(x)
+        return x
+

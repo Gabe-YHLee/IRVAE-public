@@ -35,6 +35,8 @@ class MNIST(MNIST):
         if isinstance(digits, str):
             if digits.startswith('list'):
                 digits = [int(i) for i in digits.split('_')[1]] 
+            elif digits == 'all':
+                pass
             else:
                 raise ValueError
 

@@ -49,6 +49,15 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
   <I>Figure 1: <b>(Left)</b> Distorted Representation obtained by VAE <b>(Right)</b> Isometric Representation obtained by IRVAE. Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
 </center>
 
+### 3. MNIST images of digits 0, 1, 3, 6, 7
+<center>
+<div class="imgCollage">
+<span style="width: 50%"><img src="./figure/vae01367.png" width="350 height="190"/></span>
+<span style="width: 50%"><img src="./figure/irvae01367.png" width="350 height="190"/> </span>
+</div>
+  <I>Figure 1: <b>(Left)</b> Distorted Representation obtained by VAE <b>(Right)</b> Isometric Representation obtained by IRVAE. Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
+</center>
+
 ## Environment
 
 The project is developed under a standard PyTorch environment.

@@ -10,7 +10,9 @@ from models.ae import (
 from models.modules import (
     FC_vec,
     FC_image,
-    IsotropicGaussian
+    IsotropicGaussian,
+    ConvNet28,
+    DeConvNet28
 )
 
 def get_net(in_dim, out_dim, **kwargs):
@@ -37,6 +39,24 @@ def get_net(in_dim, out_dim, **kwargs):
             activation=activation,
             out_activation=out_activation,
             out_chan_num=out_chan_num
+        )
+    elif kwargs["arch"] == "conv28":
+        activation = kwargs["activation"]
+        out_activation = kwargs["out_activation"]
+        net = ConvNet28(
+            in_chan=in_dim,
+            out_chan=out_dim,
+            activation=activation,
+            out_activation=out_activation
+        )
+    elif kwargs["arch"] == "dconv28":
+        activation = kwargs["activation"]
+        out_activation = kwargs["out_activation"]
+        net = DeConvNet28(
+            in_chan=in_dim,
+            out_chan=out_dim,
+            activation=activation,
+            out_activation=out_activation
         )
     return net
 
