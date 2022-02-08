@@ -40,6 +40,7 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
 </div>
   <I>Figure 1: <b>(Left)</b> Distorted Representation obtained by VAE, <b>(Middle)</b> Isometric Representation obtained by IRVAE, and <b>(Right)</b> Isometric Embedding obtained by Isomap (non-parametric manifold learning approach). Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
 </center>
+<br>
 
 ### 2. MNIST images of digits 0, 1, and 5
 <center>
@@ -50,9 +51,9 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
 </div>
   <I>Figure 2: <b>(Left)</b> Distorted Representation obtained by VAE, <b>(Middle)</b> Isometric Representation obtained by IRVAE, and <b>(Right)</b> Isometric Embedding obtained by Isomap (non-parametric manifold learning approach). Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
 </center>
+<br>
 
 ### 3. MNIST images of digits 0, 1, 3, 6, and 7
-
 <center>
 <div class="imgCollage">
 <span style="width: 31.8%"><img src="./figure/vae01367.png" width="250 height="190"/></span>
@@ -61,7 +62,8 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
 </div>
   <I>Figure 3-1: <b>(Left)</b> Distorted Representation obtained by VAE, <b>(Middle)</b> Isometric Representation obtained by IRVAE, and <b>(Right)</b> Isometric Embedding obtained by Isomap (non-parametric manifold learning approach). Ellipses represent pullbacked Riemannian metrics; the more isotropic and homogeneous, the more isometric. </I>
 </center>
-
+<br>
+<br>
 <center>
 <div class="imgCollage">
 <span style="width: 50%"><img src="./figure/LSLI01367.png" width="400 height="190"/></span>
@@ -69,6 +71,7 @@ def relaxed_distortion_measure(func, z, eta=0.2, create_graph=True):
 </div>
   <I>Figure 3-2: Latent Space Linear Interpolations and Generated Images in VAE and IRVAE. </I>
 </center>
+<br>
 
 ## Environment
 
