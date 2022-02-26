@@ -4,10 +4,10 @@ The official repository for \<Regularized Autoencoders for Isometric Representat
 > This paper proposes Isometrically Regularized Variational Autoencoders (IRVAE), a regularized autoencoder trained by minimizing the *VAE loss function + relaxed distortion measure*. It produces isometric representation where Euclidean distances approximate geodesic distances in the learned manifold.
 
 - *Paper*  
-- *5-mins video*
+- *5-mins video*  
 - *15-mins video*  
-- *5-mins Slides*  
-- [15-mins Slides](https://drive.google.com/file/d/1BUaGmK5rUNhWAPOVQ7BvlC3WpKsFM9-z/view?usp=sharing)  
+- *[5-mins Slides](https://drive.google.com/file/d/1F1ZzdEjkVc3_UkQxOKxCu6MGDH-y924G/view?usp=sharing)*  
+- *[15-mins Slides](https://drive.google.com/file/d/1BUaGmK5rUNhWAPOVQ7BvlC3WpKsFM9-z/view?usp=sharing)*  
 - *Poster*  
 - *[OpenReview](https://openreview.net/forum?id=mQxt8l7JL04)*  
 
