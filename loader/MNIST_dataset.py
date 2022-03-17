@@ -22,12 +22,10 @@ class MNIST(MNIST):
         if not self._check_exists():
             raise RuntimeError("Dataset not found." + " You can use download=True to download it")
 
-        data1, targets1 = torch.load(
-            os.path.join(self.processed_folder, self.training_file)
-        )
-        data2, targets2 = torch.load(
-            os.path.join(self.processed_folder, self.test_file)
-        )
+        self.train = True
+        data1, targets1 = self._load_data()
+        self.train = False
+        data2, targets2 = self._load_data()
 
         data = (torch.cat([data1, data2], dim=0).to(torch.float32) / 255).unsqueeze(1)
         targets = torch.cat([targets1, targets2], dim=0)
