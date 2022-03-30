@@ -8,7 +8,7 @@ The official repository for \<Regularized Autoencoders for Isometric Representat
 - *15-mins video*  
 - *[5-mins Slides](https://drive.google.com/file/d/1F1ZzdEjkVc3_UkQxOKxCu6MGDH-y924G/view?usp=sharing)*  
 - *[15-mins Slides](https://drive.google.com/file/d/1BUaGmK5rUNhWAPOVQ7BvlC3WpKsFM9-z/view?usp=sharing)*  
-- *Poster*  
+- *[Poster](https://drive.google.com/file/d/1Zh3QlURKBN5IV8Rrkjva87-D1567g4Hi/view?usp=sharing)*  
 - *[OpenReview](https://openreview.net/forum?id=mQxt8l7JL04)*  
 
 ## Coordinate-Invariant Relaxed Distortion Measure
