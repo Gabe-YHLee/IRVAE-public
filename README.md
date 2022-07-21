@@ -115,10 +115,10 @@ tensorboard --logdir results/
 ## Citation
 If you found this library useful in your research, please consider citing:
 ```
-@article{lee2022isometric,
+@inproceedings{yonghyeon2021regularized,
   title={Regularized Autoencoders for Isometric Representation Learning},
-  author={Lee, Yonghyeon and Yoon, Sangwoong and Son, Minjun and Park, Frank},
-  journal={International Conference on Learning Representations},
-  year={2022}
+  author={Yonghyeon, LEE and Yoon, Sangwoong and Son, MinJun and Park, Frank C},
+  booktitle={International Conference on Learning Representations},
+  year={2021}
 }
 ```
