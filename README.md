@@ -118,7 +118,7 @@ If you found this library useful in your research, please consider citing:
 @inproceedings{
 lee2022regularized,
 title={Regularized Autoencoders for Isometric Representation Learning},
-author={Yonghyeon LEE and Sangwoong Yoon and MinJun Son and Frank C. Park},
+author={Yonghyeon Lee and Sangwoong Yoon and MinJun Son and Frank C. Park},
 booktitle={International Conference on Learning Representations},
 year={2022},
 url={https://openreview.net/forum?id=mQxt8l7JL04}
